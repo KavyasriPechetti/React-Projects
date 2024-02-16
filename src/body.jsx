@@ -4,7 +4,7 @@ function Body() {
     var [ar, setAr] = React.useState([]);
     function add() {
         var newar = document.getElementById("inp").value;
-        setAr([...ar, newar]);
+        setAr([...ar, {name:newar, checked:false}]);
         document.getElementById("inp").value = "";
 
     }
@@ -13,7 +13,7 @@ function Body() {
         updatedar.splice(i, 1);
         setAr(updatedar);
     }
-    function check(i) {
+    function done(i) {
 
         const updatedar = [...ar];
         updatedar[i].checked = !updatedar[i].checked;
@@ -34,8 +34,9 @@ function Body() {
                                     <span id="doneid">{
                                         a.checked ? (<i class="bi bi-check-square-fill"></i>) : (<i class="bi bi-check-square"></i>)
                                     }</span>
-                                    <li className="lis"><b id="h">{a}</b></li>
-                                    <button id="b" onClick={() => { check(i) }}>Done</button>
+                                    <li className="lis"><b id="h">{a.name}</b></li>
+                                    <button id="b" onClick={() => { done(i) }}>{a.checked?"undo":"done"}</button>
+                                    <b id="bold">{a.checked?"Completed":"Pending"}</b>
                                     <span id="s" onClick={() => del(i)}><i class="bi bi-trash3-fill"></i></span>
 
 

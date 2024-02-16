@@ -43,7 +43,7 @@ body {
  opacity: 0.7;
  display: flex;
  flex-wrap: wrap;
-
+justify-content: space-between;
 box-shadow: 5px 5px 3px black;
  font-family: arial;
  color: black;
@@ -53,16 +53,24 @@ box-shadow: 5px 5px 3px black;
   margin-right: 100px;
 
 }
-.lis {
+ .lis {
   list-style-type: none;
 }
+/*
 #h {
-  margin-left: 50px;
+  margin-left: 100px;
   margin-right: 100px;
 }
 #s {
-  align-items: center;
-  margin:5px 100px;
+  text-align: right;
+  /* margin:5px 100px; */
  
 
+/* }
+#bold {
+  margin-left: 100px;
+  margin-right: 100px;
 }
+#b {
+  border-radius: 3px;
+} */ 
