@@ -1,0 +1,68 @@
+body {
+  background-image: url("https://glints.com/id/lowongan/wp-content/uploads/2020/05/apa-itu-to-do-list.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hed {
+  border: 0.2px solid;
+  /* background: linear-gradient(black,red); */
+  height:80px;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 30px;
+  box-shadow: 3px 3px 3px black;
+  text-align: center;
+  font-family: arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+.textbox {
+ 
+  margin: 50px;
+}
+#inp {
+  /* background-color: rgb(201, 196, 196); */
+  border-color: black;
+  background: none;
+  border-radius: 5px;
+  height: 40px;
+  width:500px;
+}
+#btn {
+  padding:10px;
+  margin-left: 20px;
+  background-color: rgb(192, 188, 188);
+  border-radius: 5px;
+}
+
+.lidiv {
+ background-color: thistle; 
+ opacity: 0.7;
+ display: flex;
+ flex-wrap: wrap;
+
+box-shadow: 5px 5px 3px black;
+ font-family: arial;
+ color: black;
+  padding:10px;
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+.lis {
+  list-style-type: none;
+}
+#h {
+  margin-left: 50px;
+  margin-right: 100px;
+}
+#s {
+  align-items: center;
+  margin:5px 100px;
+ 
+
+}
