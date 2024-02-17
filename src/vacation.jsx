@@ -28,6 +28,11 @@ function Vacation() {
         } 
     ]
     )
+    function del(index) {
+        const newarr=[...arr];
+        newarr.splice(index,1);
+        setArr(newarr);
+    }
    
     return (
         <div className="main">
@@ -39,7 +44,7 @@ function Vacation() {
                         <div style={{display:"flex", justifyContent: "center"}}>
 
                             <div id="d1">
-                            <img style={{width:"598px",height:"400px"}} id="im" src={a.image} alt={a.heading}/>
+                            <img style={{width:"594px",height:"400px"}} id="im" src={a.image} alt={a.heading}/>
                             <div id="d2">
                             <div style={{display:"flex", justifyContent:"space-between"}}>
                                 <h3>{a.heading}</h3>
@@ -49,7 +54,7 @@ function Vacation() {
                                 <p>{a.desc}</p>
                             </div>
                             <div>
-                                <button className="btn btn-primary">Not Intrested</button>
+                                <button onClick={()=>{del(index)}} className="btn btn-primary">Not Intrested</button>
                             </div>
                             </div>
                         </div>
