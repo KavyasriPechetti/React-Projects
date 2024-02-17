@@ -1,0 +1,33 @@
+#inp {
+    width: 400px;
+    height: 30px;
+}
+.para {
+    font-family: arial;
+}
+.main {
+    /* color: antiquewhite; */
+border: 2px solid;
+width: 600px;
+
+backdrop-filter: blur(15px);
+}
+
+
+
+.out {
+    
+     border: 1px solid; 
+    width: 600px;
+    overflow-wrap: break-word;
+}
+
+body {
+  
+    background-image: url("https://www.shutterstock.com/image-photo/background-letterpress-wood-type-printing-260nw-578023501.jpg");
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
