@@ -30,7 +30,7 @@ function Review() {
     return (
                 <div>
                 {
-                    arr.map((a,index) {
+                    arr.map((a,index) => {
                         return (
                             <div>
                             <img src={a.image}/>
