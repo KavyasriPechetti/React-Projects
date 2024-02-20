@@ -2,9 +2,13 @@ import React from "react";
 
 function Body() {
     var [ar, setAr] = React.useState([]);
+    var [allCount, setAllcount] = React.useState(0)
+    var [comCount, setComcount] = React.useState(0)
+    var [pendCount, setPendcount] = React.useState(0)
+
     function add() {
         var newar = document.getElementById("inp").value;
-        setAr([...ar, {name:newar, checked:false}]);
+        setAr([...ar, { name: newar, checked: false }]);
         document.getElementById("inp").value = "";
 
     }
@@ -25,6 +29,7 @@ function Body() {
         <div className="textbox">
             <input type="text" id="inp" placeholder="Enter your task" />
             <button id="btn" onClick={add}>Add</button>
+            
             <div className="divi">
                 <ul>
                     <div >
@@ -35,8 +40,8 @@ function Body() {
                                         a.checked ? (<i class="bi bi-check-square-fill"></i>) : (<i class="bi bi-check-square"></i>)
                                     }</span>
                                     <li className="lis"><b id="h">{a.name}</b></li>
-                                    <button id="b" onClick={() => { done(i) }}>{a.checked?"undo":"done"}</button>
-                                    <b id="bold">{a.checked?"Completed":"Pending"}</b>
+                                    <button id="b" onClick={() => { done(i) }}>{a.checked ? "undo" : "done"}</button>
+                                    <b id="bold">{a.checked ? "Completed" : "Pending"}</b>
                                     <span id="s" onClick={() => del(i)}><i class="bi bi-trash3-fill"></i></span>
 
 
@@ -49,7 +54,10 @@ function Body() {
                     </div>
                 </ul>
             </div>
+
         </div>
+        
+
     )
 }
 export default Body;

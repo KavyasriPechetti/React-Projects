@@ -1,12 +1,19 @@
+.status {
+   
+    font-family: arial;
+    font-size: large;
+    
+}
 body {
   background-image: url("https://glints.com/id/lowongan/wp-content/uploads/2020/05/apa-itu-to-do-list.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .hed {
   border: 0.2px solid;
-  /* background: linear-gradient(black,red); */
+  /* background: linear-gradient(black,red);  */
   height:80px;
   margin-left: 500px;
   margin-right: 500px;
@@ -20,6 +27,7 @@ body {
    
 }
 .textbox {
+ 
  
   margin: 50px;
 }
@@ -39,7 +47,7 @@ body {
 }
 
 .lidiv {
- background-color: thistle; 
+ background-color:lavenderblush; 
  opacity: 0.7;
  display: flex;
  flex-wrap: wrap;
@@ -51,6 +59,7 @@ box-shadow: 5px 5px 3px black;
   margin-top: 30px;
   margin-left: 100px;
   margin-right: 100px;
+  border-radius: 5px;
 
 }
  .lis {
