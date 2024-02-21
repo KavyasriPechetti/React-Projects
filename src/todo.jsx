@@ -1,13 +1,13 @@
 import React from "react";
 
-function Todo(props) {
+function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
     console.log("Todo");
     return (
-        <li>
-            {props.todo}
-            <button onClick={()=>(props.deleteTodo(props.index))}>Delete</button>
-            <button>Done</button>
-            <button>Undo</button>
+        <li style={{textDecoration:todo.stats?"line-through":"none"}}>
+            {todo.task}
+            <button onClick={()=>(deleteTodo(index))}>Delete</button>
+            <button onClick={()=>(doneTodo(index))}>Done</button>
+            <button onClick={()=>(undoTodo(index))}>Undo</button>
 
         </li>
     )
