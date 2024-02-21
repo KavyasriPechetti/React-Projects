@@ -1,9 +1,11 @@
 import React from "react";
 
 function Todo(props) {
+    console.log("Todo");
     return (
-        <li>{props.todo}
-            <button>Delete</button>
+        <li>
+            {props.todo}
+            <button onClick={()=>(props.deleteTodo(props.index))}>Delete</button>
             <button>Done</button>
             <button>Undo</button>
 
@@ -11,4 +13,4 @@ function Todo(props) {
     )
 }
 
-export default Todo;
+export default React.memo(Todo);
