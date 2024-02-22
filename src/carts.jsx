@@ -55,7 +55,7 @@ function Cart() {
 
     return (
         <div>
-            <h1>Shopping Cart </h1>
+            <h1 id="heading">Shopping Cart </h1>
             <button id="rbtn" onClick={() => { removeAll() }}>Remove All</button>
             {
                 isLoading && (
@@ -68,7 +68,12 @@ function Cart() {
             <div className="main">
                 {
                     (items.length == 0 ? (
-                        <h2>Your cart is empty....</h2>
+                        <div>
+                            {/* <h2>Your cart is empty....</h2> */}
+                            <img style={{marginTop:"0px",height:"500px",width:"700px"}}src={"https://shop.millenniumbooksource.com/static/images/cart1.png"}/>
+                        </div>
+                        
+                        
                     ) : (
                         <ul>
                             {
