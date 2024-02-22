@@ -1,7 +1,7 @@
 import React from "react";
 
 function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
-    console.log("Todo");
+    console.log("Todo:" +todo.task);
     return (
         <div className="listDiv">
             <li >
@@ -9,6 +9,7 @@ function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
             <h4 style={{textDecoration:todo.stats?"line-through":"none",fontFamily:"arial"}}>{todo.task}</h4>
             <button onClick={()=>(doneTodo(index))}>Done</button>
             <button onClick={()=>(undoTodo(index))}>Undo</button>
+            <button>Edit</button>
             <button onClick={()=>(deleteTodo(index))}>Delete</button>
             </div>
             
@@ -18,4 +19,4 @@ function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
     )
 }
 
-export default React.memo(Todo);
+export default Todo;

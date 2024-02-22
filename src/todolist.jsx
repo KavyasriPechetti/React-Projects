@@ -2,20 +2,21 @@ import React from "react";
 import Todo from "./todo";
 function Todolist() {
     const [todos,setTodos]=React.useState([
+       
         ]);
 
-    console.log("Hello");
+    // console.log("Hello");
 
     function addTodo() {
         const newTodo=document.getElementById("inp").value;
         setTodos([...todos,{task:newTodo,stats:false}]);
     }
 
-    function deleteTodo(ind) {
+    var deleteTodo=React.useCallback((ind)=> {
         var temp=[...todos];
         temp.splice(ind,1);
         setTodos([...temp]);
-    }
+    },[todos]);
 
     function doneTodo(ind) {
         const temp=[...todos];
