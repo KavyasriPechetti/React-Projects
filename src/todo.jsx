@@ -9,7 +9,6 @@ function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
             <h4 style={{textDecoration:todo.stats?"line-through":"none",fontFamily:"arial"}}>{todo.task}</h4>
             <button onClick={()=>(doneTodo(index))}>Done</button>
             <button onClick={()=>(undoTodo(index))}>Undo</button>
-            <button>Edit</button>
             <button onClick={()=>(deleteTodo(index))}>Delete</button>
             </div>
             

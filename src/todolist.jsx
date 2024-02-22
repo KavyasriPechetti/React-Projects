@@ -37,11 +37,11 @@ function Todolist() {
             <h1 style={{fontFamily:"arial"}}>List your Todos</h1>
             
             </div>
-            <div>
+            {/* <div>
                 <span>All :</span>
                 <span>Completed :</span>
                 <span>Pending :</span>
-            </div>
+            </div> */}
             </div>
             <div className="input">
             <input type="text" id="inp" placeholder="Enter your task"/>
