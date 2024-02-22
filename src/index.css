@@ -1,0 +1,52 @@
+.main {
+  display:flex;
+  flex-wrap: wrap;
+  width: 75%;
+  /* justify-content: space-evenly; */
+}
+.pdiv{
+  background: linear-gradient(white,rgb(167, 220, 241));
+  border: 1px solid;
+  border-radius: 10px;
+margin: 10px;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+box-shadow: 5px 5px 3px;
+
+
+}
+
+
+#title {
+  
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 3px 3px 5px rgb(134, 133, 133);
+  margin: auto;
+  
+}
+
+.p{
+ align-items: center;
+ 
+}
+.cart {
+  background-color: rgb(242, 206, 243);
+  border: 2px solid;
+  width: 25%;
+  text-align: left;
+  border-radius: 5px;
+}
+.first {
+  display: flex;
+  margin-top: 10px;
+}
+.carticon{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
