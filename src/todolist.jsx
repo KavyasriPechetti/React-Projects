@@ -16,6 +16,7 @@ function Todolist() {
         setTodos([...todos, { task: newTodo, stats: false }]);
         setAllCount(allCount + 1);
         setPendCount(pendCount + 1);
+        document.getElementById("inp").value="";
 
     }
 
@@ -68,7 +69,7 @@ function Todolist() {
     }
 
     return (
-        <div>
+     
 
       
         <div className="mybox">
@@ -91,8 +92,8 @@ function Todolist() {
                 <button onClick={() => { addTodo() }}>Add</button>
             </div>
 
-
-            {
+                <div>
+                {
                 todos.map((todo, i) => {
                     
                         return <Todo todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo}></Todo>
@@ -100,8 +101,10 @@ function Todolist() {
 
                 })
             }
+                 </div>
+            
         </div>
-        </div>
+
     )
 }
 export default React.memo(Todolist);

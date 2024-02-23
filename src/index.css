@@ -1,12 +1,14 @@
 
 #inp {
-  height: 40px;
+  height: 50px;
   margin: 20px;
   width: 500px;
+  background-color: antiquewhite;
+  border-radius: 3px;
 }
 .mybox{
   text-align: center;
-  /* background-color: rgb(70, 112, 42); */
+  /* margin-top: 20px 40px; */
 
 }
 
@@ -20,24 +22,32 @@
   margin: 20px 200px;
   height: 70px;
   border-radius: 5px;
-  
+  background-color: lavenderblush;
+  box-shadow: 5px 5px 5px black;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 .eachdiv>button{
   border-radius: 5px;
+  background-color: rgb(245, 205, 243);
 }
 .head{
  border: 2px solid;
  border-radius: 5px;
+ box-shadow: 5px 5px 5px black;
   margin: 20px 100px;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(to right,rgb(158, 46, 233),rgb(241, 80, 129));
 }
 .btns>button{
   margin: 0px 10px;
+}
+.input>button{
+  background-color:antiquewhite;
+  border-radius: 5px;
 }
 

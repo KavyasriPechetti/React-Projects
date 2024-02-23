@@ -6,7 +6,7 @@ function Todo({todo,index,deleteTodo,doneTodo,undoTodo}) {
         <div className="listDiv">
             <li >
             <div className="eachdiv">
-            <h4 style={{textDecoration:todo.stats?"line-through":"none",fontFamily:"arial"}}>{todo.task}</h4>
+            <h5 style={{textDecoration:todo.stats?"line-through":"none",fontFamily:"arial"}}>{todo.task}</h5>
             
             <button onClick={()=>(doneTodo(index))}>Done</button>
             <button onClick={()=>(undoTodo(index))}>Undo</button>
