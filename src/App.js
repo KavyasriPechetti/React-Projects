@@ -4,9 +4,11 @@ import Todolist from './todolist';
 
 function App() {
   return (
-    <div className='bd'>
+
+    <div className='App'>
     <Todolist></Todolist>
     </div>
+   
   )
 }
 
