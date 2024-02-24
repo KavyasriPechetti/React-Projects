@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Counter from './counter';
+import Home from './home';
+import Todolist from './todolist';
+import Countries from './countries';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import CountryDetails from './countryDetails';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +19,29 @@ const router = createBrowserRouter([
     element:<App/>,
     children:[
       
+      {
+        path:"home",          
+        element:<Home></Home>
+      },
+      {
+        path:"counter",          // slash / always points to localhost 3000
+        element:<Counter></Counter>
+      },
+      {
+        path:"todolist",          
+        element:<Todolist></Todolist>
+      },
+      {
+        path:"countries",
+        element:<Countries></Countries>,
+        children:[
+          {
+            path:"details/:cname",
+            element:<CountryDetails></CountryDetails>
+          }
+
+        ]
+      }
     ]
   },
 ]);
