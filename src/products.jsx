@@ -1,4 +1,5 @@
 import React from "react";
+import Skeleton from "react-loading-skeleton";
 
 function Products() {
 
@@ -8,64 +9,78 @@ function Products() {
     let componentMounted = true;
 
     React.useEffect(() => {
-        const getProducts = async () => {
+        const getProducts=async()=> {
             setLoading(true);
-            const response = await fetch("https://dummyjson.com/products");
-            if (componentMounted) {
-                const products=await response.json();
-                setData(products);
-                setFiltered(products);
+            const response=await fetch("https://fakestoreapi.com/products");
+            if(componentMounted) {
+                setData(await response.clone().json());
+                setFiltered(await response.json());
                 setLoading(false);
-                // console.log(filtered);
+                console.log(filtered);
             }
-            
-        };
+            return ()=> {
+                componentMounted=false;
+            }
+        }
         getProducts();
-        return () => {
-            componentMounted = false;
-        };
-       
-    }, [])
+     }, []);
 
     const Loading = () => {
         return (
             <>
-                Loading.........
+                <div className="col-md-3">
+                    <Skeleton height={350}></Skeleton>
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}></Skeleton>
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}></Skeleton>
+                </div>
+                <div className="col-md-3">
+                    <Skeleton height={350}></Skeleton>
+                </div>
             </>
         )
+    }
+
+    const filteredProducts=(type)=> {
+        const updatedProducts=data.filter((x)=> x.category===type);
+            setFiltered(updatedProducts);
+        
     }
 
     const ShowProducts = () => {
         return (
             <>
                 <div className="button d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-3">All</button>
-                    <button className="btn btn-outline-dark me-3">Men's Collection</button>
-                    <button className="btn btn-outline-dark me-3">Women's Collection</button>
-                    <button className="btn btn-outline-dark me-3">Jewelery</button>
-                    <button className="btn btn-outline-dark">Electronics</button>
+                    <button className="btn btn-outline-dark me-3" onClick={()=>setFiltered(data)}>All</button>
+                    <button className="btn btn-outline-dark me-3" onClick={()=>filteredProducts("men's clothing")}>Men's</button>
+                    <button className="btn btn-outline-dark me-3" onClick={()=>filteredProducts("women's clothing")}>Women's</button>
+                    <button className="btn btn-outline-dark me-3"onClick={()=>filteredProducts("jewelery")}>Jewelery</button>
+                    <button className="btn btn-outline-dark"onClick={()=>filteredProducts("electronics")}>Electronics</button>
                 </div>
-                {filtered.map((product) => {
+                {filtered.length && filtered.map((product) => {
                     return (
                         
-                            <div className="col-md-3">
-                                <div className="card">
-                                    <img src={product.image} className="card-img-top" alt={product.title}/>
+                            <div  className="col-md-3 mb-4 ">
+                                <div id="p"className="card h-100 text-center p-4" key={product.id}>
+                                    <img src={product.image} className="card-img-top" alt={product.title} height="230px"/>
                                         <div className="card-body">
-                                            <h5 className="card-title">{product.title}</h5>
-                                            <p className="card-text">${product.price}</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
+                                            <p className="card-text lead fw-bold">${product.price}</p>
+                                            <a href="#" className="btn btn-outline-dark">Buy Now</a>
                                         </div>
-                                </div>
+                              </div>
                             </div>
-                      
-                    )
+                   )
                 })}
             </>
 
         );
 
     }
+
 
     return (
         <div>

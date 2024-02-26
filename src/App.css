@@ -3,3 +3,7 @@
 .navbar-nav a{
     font-weight: 20px;
 }
+#p {
+    /* border: 2px solid; */
+    box-shadow: 6px 5px 5px rgb(194, 192, 192);
+}
