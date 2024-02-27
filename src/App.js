@@ -17,7 +17,6 @@ function App() {
               <input type='text' placeholder='lastname' name='ln' onChange={uf.handleChange}/><br/><br/>
               <input type='text' placeholder='age' name='age' onChange={uf.handleChange}/><br/><br/>
               <button type='submit'>Save</button>
-
             </form>
           )
         }
