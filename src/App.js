@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { Formik } from 'formik';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>Welcome to Formik second method</h1>
+     <Formik 
+     initialValues={{"fn":"", "ln":"", "age":""}}
+     onSubmit={(fv)=>{console.log(fv)}}
+     >
+      {
+        (uf)=>{
+          return (
+            <form onSubmit={uf.handleSubmit}>
+              <input type='text' placeholder='firstname' name='fn' onChange={uf.handleChange}/><br/><br/>
+              <input type='text' placeholder='lastname' name='ln' onChange={uf.handleChange}/><br/><br/>
+              <input type='text' placeholder='age' name='age' onChange={uf.handleChange}/><br/><br/>
+              <button type='submit'>Save</button>
+
+            </form>
+          )
+        }
+      }
+
+     </Formik>
     </div>
   );
 }
