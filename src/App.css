@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+body{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5c4b8e4a12b13f52d824bc97/1609168743137-CP1YBI5W5Q71CU78V1AU/iStock-990757788.jpg?format=1500w");
+    background-attachment: fixed;
+    
+    
+}
+.main{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px solid ;
+    width: 450px;
+    backdrop-filter: blur(3px);
+    
+   
+    /* background: linear-gradient(rgb(86, 196, 247),rgb(238, 90, 139)); */
+    /* opacity: 0 rgb(218, 213, 213); */
+}
+.inp{
+    margin: 20px;
+}
+#i{
+height: 35px;
+width: 250px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#btn{
+border-color: black;
+border-radius: 5px;
+background-color: antiquewhite;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#im {
+    text-align: center;
+    height: 100px;
+    width: 100px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#qr{
+    text-align: center;
+    
+    padding: 10px;
+    width: 500px;
+    margin: 50px 435px;
+    
+    
 }
