@@ -8,6 +8,8 @@ function Todolist() {
     const [comCount, setComCount] = React.useState(0);
     const [pendCount, setPendCount] = React.useState(0);
     const [showCompleted,setShowCompleted]=React.useState(false);
+    const [showPending,setShowPending]=React.useState(true);
+
 
     // console.log("Hello");
 
@@ -35,7 +37,7 @@ function Todolist() {
         setAllCount(allCount - 1);
         // setPendCount(pendCount-1);
 
-    }, [todos]);
+    }, [todos,allCount,comCount,pendCount]);
 
     function doneTodo(ind) {
         const temp = [...todos];
@@ -62,9 +64,14 @@ function Todolist() {
 
     function filterCompleted() {
         setShowCompleted(true);
+        
     }
 
     function filterPending() {
+        setShowPending(false);
+    }
+
+    function filterAll() {
         setShowCompleted(false);
     }
 
@@ -80,7 +87,7 @@ function Todolist() {
                 </div>
 
                 <div className="btns" >
-                    <button class="btn btn-info">All : <span>{allCount}</span></button>
+                    <button class="btn btn-info" onClick={filterAll}>All : <span>{allCount}</span></button>
                     <button class="btn btn-info" onClick={filterCompleted}>Completed : <span>{comCount}</span></button>
                     <button class="btn btn-info" onClick={filterPending}>Pending : <span>{pendCount}</span></button>
                 </div>
@@ -94,12 +101,14 @@ function Todolist() {
 
                 <div>
                 {
-                todos.map((todo, i) => {
-                    
-                        return <Todo todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo}></Todo>
-
-
-                })
+               todos.map((todo, i) => {
+                if (!showCompleted || (showCompleted && todo.stats)) {
+                    return <Todo key={i} todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo} />
+                } else if(!showPending || (showPending && todo.stats)) {
+                    return <Todo key={i} todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo} />
+                }
+                return null;
+            })
             }
                  </div>
             
