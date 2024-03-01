@@ -4,16 +4,17 @@ import store from './store/store';
 import Counter from './components/Counter';
 import Todolist from './components/Todolist';
 import Products from './components/products';
-import Header from './components/Header';
+import Cart from './components/cart';
 
 function App() {
   return (
     <Provider store={store}>
       <div >
       {/* <Todolist></Todolist> */}
-       <Header></Header>
+       
         <Products></Products>
         {/* <Counter></Counter> */}
+        
        
         
       </div>

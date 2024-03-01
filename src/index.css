@@ -1,10 +1,14 @@
 .betterview{
-    border: 2px solid;
+    /* border: 2px solid; */
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     
 }
+body{
+    background-color: antiquewhite;
+}
+
 .card{
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid gray;
@@ -14,10 +18,12 @@
     text-align: center;
     /* padding: 5px; */
     border-radius: 3px;
+    background-color: rgb(238, 176, 230);
 }
 .card img{
-    width: 220px;
-    height: 250px;
+    margin-top: 5px;
+    width: 120px;
+    height: 120px;
 }
 .cardsContainer{
     display: flex;
@@ -36,4 +42,59 @@
 .head{
     display: flex;
     justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+.cartdiv{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    border: 2px solid gray;
+    margin: 20px 10px;
+    height: 120px;
+    box-shadow: 3px 3px 3px gray;
+    text-align: center;
+    align-items: center;
+    /* padding: 5px; */
+    border-radius: 3px;
+    justify-content: space-between;
+    background-color: rgb(171, 245, 239);
+}
+.cartdiv img{
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+}
+.cart h4{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 7%;
+    text-align: center;
+}
+.cart p{
+    width: 30%;
+    text-align: left;
+}
+.cart button{
+ margin: 0px 10px;
+ 
+}
+#price{
+    margin-right: 5px;
+}
+.empty img{
+    
+    height: 300px;
+    width: 300px;
+}
+.empty{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading{
+    text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+    color: brown;
 }
