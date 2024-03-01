@@ -12,6 +12,7 @@ import Cart from './components/cart';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
+
 const router = createBrowserRouter([
   {
     path: "/",

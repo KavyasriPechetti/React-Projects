@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 function Cart(props) {
     
     console.log(props);
+    const total = props.products.cart.reduce((sum, product) => sum + product.price, 0);
+
     return (
         <div>
             <div className="heading">
@@ -18,23 +20,21 @@ function Cart(props) {
                     (
                         props.products.cart.map((product) => {
                             return (
-                                <div className="cartdiv" key={product.id}>
-                                  
+                                
+                                     <div className="cartdiv" key={product.id}>
+                                        
                                         <img src={product.images[0]} />
                                         <h4>{product.title}</h4>
                                         <p>{product.description}</p>
-                                        <h5>${product.price}</h5>
-                                        <div>
-                                        <button onClick={()=>{props.dispatch({type:"DECREMENT", payload:product.id})}}>-</button><span>{product.quantity}</span>
-                                        <button onClick={()=>{props.dispatch({type:"INCREMENT",payload:product.id})}}>+</button>                                       
-                                        </div>
-                                        <h4 id="price">Item cost:<i>${product.price*product.quantity}</i></h4>
-
-                              
+                                        <h5 id="price">${product.price}</h5>
 
                                 </div>
+                               
+                           
+                               
                             )
                         })
+                        
                     ):
                     (<div className="empty">
                         <img src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg"/>
@@ -46,6 +46,9 @@ function Cart(props) {
                 </div>
 
 
+            </div>
+            <div className="tot">
+                <h1>Total:${total}</h1>
             </div>
 
         </div>
