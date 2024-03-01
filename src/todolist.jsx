@@ -7,9 +7,8 @@ function Todolist() {
     const [allCount, setAllCount] = React.useState(0);
     const [comCount, setComCount] = React.useState(0);
     const [pendCount, setPendCount] = React.useState(0);
-    const [showCompleted,setShowCompleted]=React.useState(false);
-    const [showPending,setShowPending]=React.useState(true);
-
+    const [showCompleted, setShowCompleted] =React.useState(false);
+    const [showPending, setShowPending] = React.useState(false);
 
     // console.log("Hello");
 
@@ -64,15 +63,18 @@ function Todolist() {
 
     function filterCompleted() {
         setShowCompleted(true);
+        setShowPending(false);
         
     }
 
     function filterPending() {
-        setShowPending(false);
+        setShowCompleted(false);
+        setShowPending(true);
     }
 
     function filterAll() {
         setShowCompleted(false);
+        setShowPending(false);
     }
 
     return (
@@ -100,14 +102,14 @@ function Todolist() {
             </div>
 
                 <div>
-                {
-               todos.map((todo, i) => {
-                if (!showCompleted || (showCompleted && todo.stats)) {
+                {todos.filter(todo => {
+                    if (showCompleted && todo.stats) return true;
+                    if (showPending && !todo.stats) return true;
+                    if (!showCompleted && !showPending) return true;
+                    return false;
+                }).map((todo, i) => {
+               
                     return <Todo key={i} todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo} />
-                } else if(!showPending || (showPending && todo.stats)) {
-                    return <Todo key={i} todo={todo} index={i} deleteTodo={deleteTodo} doneTodo={doneTodo} undoTodo={undoTodo} />
-                }
-                return null;
             })
             }
                  </div>
