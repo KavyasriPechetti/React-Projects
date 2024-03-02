@@ -28,19 +28,26 @@ function Cart() {
     setCount(count-1);
    }
     return (
-        <div className="cou">
-        <div>
+        <div  className="cou">
             <div>
-            <button onClick={increment}>+</button> &nbsp;
-           <span>Count:{count}</span>&nbsp;
-           <button onClick={decrement}>-</button>
-            </div><br/><br/>
+                <h1>Counter</h1>
+            </div>
+            <br/>
            
-            <button onClick={restorePrevCount}>Prev</button>&nbsp;&nbsp;&nbsp;
-            <button onClick={incrementByTen}>Inc By 10</button>&nbsp;&nbsp;&nbsp;
-            <button onClick={clearCount}>Clear</button>&nbsp;&nbsp;&nbsp;
+           <div>
+               <div>
+               <button onClick={increment}>+</button> &nbsp;
+              <span>Count:{count}</span>&nbsp;
+              <button onClick={decrement}>-</button>
+               </div><br/><br/>
+              
+               <button onClick={restorePrevCount}>Prev</button>&nbsp;&nbsp;&nbsp;
+               <button onClick={incrementByTen}>Inc By 10</button>&nbsp;&nbsp;&nbsp;
+               <button onClick={clearCount}>Clear</button>&nbsp;&nbsp;&nbsp;
+           </div>
+          
         </div>
-        </div>
+       
     )
 }
 

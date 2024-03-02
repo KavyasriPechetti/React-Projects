@@ -37,7 +37,8 @@ function NavBar() {
   </div>
 </nav>
 <div className="home1">
-<h1>Welcome to the Worls of Technology</h1>
+  <h1>Welcome to the world of Technologies</h1>
+<img src="https://cdn.pixabay.com/photo/2022/07/08/05/38/freelance-work-7308505_640.png"/>
 </div>
 </div>
     ) 

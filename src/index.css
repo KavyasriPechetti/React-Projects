@@ -22,12 +22,16 @@ body{
 .home1{
     text-align: center;
     margin: 100px 50px;
-    background-color: antiquewhite;
     
 }
 .cou{
     text-align: center;
-    margin: 150px 100px;
+    margin: 150px 400px;
     background-color: antiquewhite;
     padding: 50px;
+
+}
+.cou button{
+    border-radius: 5px;
+    background-color: rgb(138, 240, 235);
 }
