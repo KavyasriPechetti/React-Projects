@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(245, 202, 236);
+    background-color:black;
+ 
 }
 
 .App{
@@ -8,5 +9,5 @@ body{
     align-items: center;
     text-align: center;
     background-color: rgb(182, 93, 241);
-    margin: 0px 200px;
+    margin: 100px 200px;
   }
