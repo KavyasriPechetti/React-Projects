@@ -13,7 +13,7 @@ function Cart() {
     };
 
     const clearCount = () => {
-        setCount();
+        setCount(0);
     };
 
     const restorePrevCount = () => {
